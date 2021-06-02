@@ -37,7 +37,7 @@ func main() {
 	for i := 0; i < size; i++ {
 		var counter uint
 		if usedWords != nil {
-			if isUsed(usedWords, sortedSlice[i]) {
+			if used(usedWords, sortedSlice[i]) {
 				continue
 			}
 		}
@@ -78,7 +78,7 @@ func main() {
 }
 
 //function for searching the slice of bytes in the slice of slice of bytes
-func isUsed(arr [][]byte, word []byte) bool {
+func used(arr [][]byte, word []byte) bool {
 	for i := 0; i < len(arr); i++ {
 		if bytes.Compare(arr[i], word) == 0 {
 			return true
