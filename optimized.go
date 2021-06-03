@@ -7,6 +7,28 @@ import (
 	"io/ioutil"
 )
 
+func WordDivider(data *[]byte, sortedSlice *[][]byte) {
+
+	var oneDim []byte
+
+	size := len(*data)
+
+	for i := 0; i < size-1; i++ {
+		//checking here whether a byte is a letter or a symbol
+		if (*data)[i] >= 97 && (*data)[i] <= 122 || (*data)[i] >= 65 && (*data)[i] <= 90 {
+			//and appending only symbols
+			oneDim = append(oneDim, (*data)[i])
+			//if array does not find any letters it means that new word started
+			continue
+		}
+		if len(oneDim) > 0 {
+			//empty array check
+			*sortedSlice = append(*sortedSlice, oneDim)
+		}
+		oneDim = []byte{}
+	}
+}
+
 func WordEnumerator(out io.Writer) {
 
 	data, err := ioutil.ReadFile("mobydick.txt")
@@ -14,28 +36,11 @@ func WordEnumerator(out io.Writer) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	//one dimensional array for storing a single word
-	var oneDim []byte
-	//kind of sorted slice. In few words, it stores words
+	//
 	var sortedSlice [][]byte
-
-	size := len(data)
-
-	for i := 0; i < size-1; i++ {
-		//checking here whether a byte is a letter or a symbol
-		if data[i] >= 97 && data[i] <= 122 || data[i] >= 65 && data[i] <= 90 {
-			//and appending only symbols
-			oneDim = append(oneDim, data[i])
-			//if array does not find any letters it means that new word started
-			continue
-		}
-		if len(oneDim) > 0 {
-			//empty array check
-			sortedSlice = append(sortedSlice, oneDim)
-		}
-		oneDim = []byte{}
-	}
-	size = len(sortedSlice)
+	WordDivider(&data, &sortedSlice)
+	//
+	size := len(sortedSlice)
 	//Slice for checked words, reading and counting already checked words cause huge overhead
 
 	var usedWords [][]byte
@@ -88,7 +93,7 @@ func WordEnumerator(out io.Writer) {
 //function for searching the slice of bytes in the slice of slice of bytes
 func isUsedCheck(arr *[][]byte, word *[]byte) int {
 	for i := 0; i < len(*arr); i++ {
-		if bytes.Compare((*arr)[i], *word) == 0 {
+		if bytes.Equal((*arr)[i], *word) {
 			return i
 		}
 	}
