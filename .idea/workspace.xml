@@ -19,12 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f341a268-831e-4360-bd46-c1cfc6b8883b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/opimized.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/optimized_test.go" afterDir="false" />
+    <list default="true" id="f341a268-831e-4360-bd46-c1cfc6b8883b" name="Default Changelist" comment="optimized codes with initial for report">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/optim.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/optim_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/opimized.go" beforeDir="false" afterPath="$PROJECT_DIR$/optimized.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,7 @@
   <component name="GOROOT" path="C:\Go" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1t7AEgAkLdZv93U0nOayXVphX2f" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -50,9 +50,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -63,7 +63,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Go Test.BenchmarkWordEnumerator in endtermTask">
+  <component name="RunManager" selected="Go Test.BenchmarkWordCounter in testquest">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="testquest" />
       <working_directory value="$PROJECT_DIR$" />
@@ -72,54 +72,20 @@
       <directory value="$PROJECT_DIR$" />
       <method v="2" />
     </configuration>
-    <configuration name="BenchmarkWordCounter in endtermTask" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="BenchmarkWordCounter in testquest" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="testquest" />
       <working_directory value="$PROJECT_DIR$" />
       <framework value="gobench" />
       <kind value="PACKAGE" />
-      <package value="endtermTask" />
+      <package value="testquest" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <pattern value="^\QBenchmarkWordCounter\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="BenchmarkWordEnumerator in endtermTask" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="testquest" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gobench" />
-      <kind value="PACKAGE" />
-      <package value="endtermTask" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <pattern value="^\QBenchmarkWordEnumerator\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gobench main_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="testquest" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gobench" />
-      <kind value="FILE" />
-      <package value="endtermTask" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/main_test.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="gobench optim_test.go" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="testquest" />
-      <working_directory value="$PROJECT_DIR$" />
-      <framework value="gobench" />
-      <kind value="FILE" />
-      <package value="endtermTask" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/optim_test.go" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.BenchmarkWordEnumerator in endtermTask" />
-        <item itemvalue="Go Test.BenchmarkWordCounter in endtermTask" />
-        <item itemvalue="Go Test.gobench optim_test.go" />
-        <item itemvalue="Go Test.gobench main_test.go" />
+        <item itemvalue="Go Test.BenchmarkWordCounter in testquest" />
         <item itemvalue="Go Build.go build main.go" />
       </list>
     </recent_temporary>
@@ -131,7 +97,15 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial code for optimization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial code for optimization" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="529" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1622651345790">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="529" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1622651345790" />
     <state x="647" y="310" key="Github.ShareDialog" timestamp="1622649695450">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -140,25 +114,29 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="610" y="117" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1622649706709" />
-    <state width="1493" height="151" key="GridCell.Tab.0.bottom" timestamp="1622655679921">
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1622652763844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="151" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622655679921" />
+    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622652763844" />
     <state width="1877" height="114" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1622110547489" />
-    <state width="1493" height="151" key="GridCell.Tab.0.center" timestamp="1622655679921">
+    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1622652763844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="151" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622655679921" />
+    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622652763844" />
     <state width="1877" height="114" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1622110547489" />
-    <state width="1493" height="151" key="GridCell.Tab.0.left" timestamp="1622655679921">
+    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1622652763844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="151" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622655679921" />
+    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622652763844" />
     <state width="1877" height="114" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1622110547489" />
-    <state width="1493" height="151" key="GridCell.Tab.0.right" timestamp="1622655679921">
+    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1622652763844">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="151" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622655679921" />
+    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622652763844" />
     <state width="1877" height="114" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1622110547489" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1622651418661">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1622651418661" />
   </component>
 </project>

@@ -15,7 +15,7 @@ func WordEnumerator(out io.Writer) {
 		fmt.Println(err)
 	}
 	//one dimensional array for storing a single word
-	var oned []byte
+	var oneDim []byte
 	//kind of sorted slice. In few words, it stores words
 	var sortedSlice [][]byte
 
@@ -25,15 +25,15 @@ func WordEnumerator(out io.Writer) {
 		//checking here whether a byte is a letter or a symbol
 		if data[i] >= 97 && data[i] <= 122 || data[i] >= 65 && data[i] <= 90 {
 			//and appending only symbols
-			oned = append(oned, data[i])
+			oneDim = append(oneDim, data[i])
 			//if array does not find any letters it means that new word started
 			continue
 		}
-		if len(oned) > 0 {
+		if len(oneDim) > 0 {
 			//empty array check
-			sortedSlice = append(sortedSlice, oned)
+			sortedSlice = append(sortedSlice, oneDim)
 		}
-		oned = []byte{}
+		oneDim = []byte{}
 	}
 	size = len(sortedSlice)
 	//Slice for checked words, reading and counting already checked words cause huge overhead
@@ -82,7 +82,7 @@ func WordEnumerator(out io.Writer) {
 		print(string(usedWords[size-i-1]) + " ")
 		println(occurrenceSlice[size-i-1])
 	}
-	fmt.Fprintln(out, "fuck")
+	fmt.Fprintln(out, "io.Writer")
 }
 
 //function for searching the slice of bytes in the slice of slice of bytes
