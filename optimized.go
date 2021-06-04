@@ -7,18 +7,20 @@ import (
 	"io/ioutil"
 )
 
+//used for collecting word from bytes as slice of bytes
 func WordDivider(data *[]byte, sortedSlice *[][]byte) {
 
+	//slice for single word
 	var oneDim []byte
 
 	size := len(*data)
 
 	for i := 0; i < size-1; i++ {
-		//checking here whether a byte is a letter or a symbol
+		//checking byte for letter
 		if (*data)[i] >= 97 && (*data)[i] <= 122 || (*data)[i] >= 65 && (*data)[i] <= 90 {
-			//and appending only symbols
+			//formation of word by byte
 			oneDim = append(oneDim, (*data)[i])
-			//if array does not find any letters it means that new word started
+			//if no letter, jump to next iteration
 			continue
 		}
 		if len(oneDim) > 0 {
@@ -36,19 +38,22 @@ func WordEnumerator(out io.Writer) {
 	if err != nil {
 		fmt.Println(err)
 	}
-	//
+	//slice for storing byte words
 	var sortedSlice [][]byte
+	//collect words
 	WordDivider(&data, &sortedSlice)
 	//
 	size := len(sortedSlice)
-	//Slice for checked words, reading and counting already checked words cause huge overhead
 
+	//slice for storing grouped by occurrence, distinct words
 	var usedWords [][]byte
 	var occurrenceSlice []uint
+	//index of word on a usedWords slice
 	var index int
 
 	for i := 0; i < size; i++ {
 		if usedWords != nil {
+			//is word occurred before or not
 			index = isUsedCheck(&usedWords, &sortedSlice[i])
 			if index == -1 {
 				usedWords = append(usedWords, sortedSlice[i])
